@@ -54,8 +54,8 @@ with tarfile.open(out / "ConfirmBeforeCall-source.tar.gz", "w:gz") as archive:
     info = out / "BUILD-SOURCE.txt"
     info.write_text(f"Vencord commit: {upstream}\nPlugin commit: {plugin}\n"
                     "Modified by callbuttonmod: added src/userplugins/confirmBeforeCall.\n"
-                    "Build: pnpm install --frozen-lockfile && pnpm build --dev --standalone --disable-updater\n"
-                    "Without .git, set VENCORD_HASH to the Vencord commit when building.\n")
+                    "Install dependencies: pnpm install --frozen-lockfile\n"
+                    f"Build: VENCORD_HASH={upstream} VENCORD_REMOTE=Vendicated/Vencord pnpm build --dev --standalone --disable-updater\n")
     archive.add(info, arcname="Vencord/BUILD-SOURCE.txt")
     info.unlink()
 assets = [out / "ConfirmBeforeCall-desktop.zip", out / "ConfirmBeforeCall-source.tar.gz"]
