@@ -1,0 +1,11 @@
+{
+  "name": "callbuttonmod",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.4"
+  }
+}
